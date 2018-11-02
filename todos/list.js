@@ -40,10 +40,7 @@ module.exports.list = (event, context, callback) => {
             callback(null, {
                 headers: headers,
                 statusCode: error.statusCode || 501,
-                headers: {
-                    'Content-Type': 'text/plain'
-                },
-                body: 'Couldn\'t fetch the todos.',
+                body: JSON.stringify('Couldn\'t fetch the todos.'),
             });
             return;
         }

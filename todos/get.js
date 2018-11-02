@@ -20,11 +20,11 @@ module.exports.get = (event, context, callback) => {
     };
 
     if (event.headers["x-api-key"] === undefined) {
-        callback(null, { headers: headers, statusCode: 400, body: "Missing or invalid x-api-key header.", headers: { "Content-Type": "text/plain" } });
+        callback(null, { headers: headers, statusCode: 400, body: JSON.stringify("Missing or invalid x-api-key header.")});
     } else if (event.headers["x-api-key"].length < 1) {
-        callback(null, { headers: headers, statusCode: 400, body: "Empty x-api-key header value.", headers: { "Content-Type": "text/plain" } });
+        callback(null, { headers: headers, statusCode: 400, body: JSON.stringify("Empty x-api-key header value.")});
     } else if (event.pathParameters.id === undefined) {
-        callback(null, { headers: headers, statusCode: 400, body: "Missing 'id' in URL path.", headers: { "Content-Type": "text/plain" } });
+        callback(null, { headers: headers, statusCode: 400, body: JSON.stringify("Missing 'id' in URL path.")});
     }
 
     const params = {
@@ -50,13 +50,14 @@ module.exports.get = (event, context, callback) => {
 
         if (result === undefined || result.Item === "") {
             callback(null, { statusCode: 400, body: "No item found. Check that the API key and item ID are correct.", headers: { "Content-Type": "text/plain" } });
-        }
+        } else {
 
-        callback(null, {
-            headers: headers,
-            statusCode: 200,
-            body: JSON.stringify(result.Item),
-        });
+            callback(null, {
+                headers: headers,
+                statusCode: 200,
+                body: JSON.stringify(result.Item),
+            });
+        }
     });
 
 };
