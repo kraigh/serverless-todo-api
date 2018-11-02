@@ -1,7 +1,7 @@
 # Todo Service built with NodeJS using Serverless Framework, running on AWS Lambda
 
 [![Build Status](https://travis-ci.com/kraigh/serverless-todo-api.svg?branch=master)](https://travis-ci.com/kraigh/serverless-todo-api)
-[![Code Quality](https://sonarcloud.io/api/project_badges/measure?project=kraigh_serverless-todo-api&metric=alert_status)]
+![Code Quality](https://sonarcloud.io/api/project_badges/measure?project=kraigh_serverless-todo-api&metric=alert_status)
 
 ![Serverless Todo Service Architecture](images/sls_todo_architecture.png "Serverless Todo Service Architecture")
 
