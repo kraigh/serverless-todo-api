@@ -1,0 +1,13 @@
+language: node_js
+install:
+- npm ci
+# keep the npm cache around to speed up installs
+cache:
+  directories:
+  - "$HOME/.npm"
+addons:
+  sonarcloud:
+    organization: "kraigh-github" # the key of the org you chose at step #3
+script:
+  # other script steps might be done before running the actual analysis
+  - sonar-scanner
