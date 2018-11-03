@@ -313,7 +313,7 @@ xhttp.onreadystatechange = function() {
     }
 };
 
-xhttp.open(&quot;GET&quot;, &quot;https://api.kraigh.net/todos, true);
+xhttp.open(&quot;GET&quot;, &quot;https://api.kraigh.net/todos&quot;, true);
 xhttp.setRequestHeader("x-api-key","abc123");
 xhttp.send();</pre>
                         </div>
@@ -381,7 +381,7 @@ xhttp2.onreadystatechange = function() {
 xhttp2.open(&quot;POST&quot;, &quot;https://api.kraigh.net/todos&quot;, true);
 
 xhttp2.setRequestHeader(&quot;Content-type&quot;, &quot;application/json&quot;);
-xhr.setRequestHeader(&quot;x-api-key&quot;, &quot;abc123&quot;);
+xhttp2.setRequestHeader(&quot;x-api-key&quot;, &quot;abc123&quot;);
 xhttp2.send(JSON.stringify(data));</pre>
                         </div>
                     </div>
@@ -448,7 +448,7 @@ xhttp2.onreadystatechange = function() {
 xhttp2.open(&quot;POST&quot;, &quot;https://api.kraigh.net/todos/&quot;+id, true);
 
 xhttp2.setRequestHeader(&quot;Content-type&quot;, &quot;application/json&quot;);
-xhr.setRequestHeader(&quot;x-api-key&quot;, &quot;abc123&quot;);
+xhttp2.setRequestHeader(&quot;x-api-key&quot;, &quot;abc123&quot;);
 xhttp2.send(JSON.stringify(data));</pre>
                         </div>
                     </div>
