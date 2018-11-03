@@ -19,8 +19,8 @@ custom:
   localDir: static
   
   hostedZoneName: kraigh.net
-  aliasHostedZoneId: Z3AQBSTGFYJSTF
-  aliasDNSName: s3-website-us-east-1.amazonaws.com
+  aliasHostedZoneId: Z2FDTNDATAQYW2
+  aliasDNSName: dieqgzge2jzbt.cloudfront.net
 
   customDomain:
     domainName: api.kraigh.net
