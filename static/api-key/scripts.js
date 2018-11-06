@@ -1,6 +1,7 @@
 
 // this is the id of the form
 $("#api-form").submit(function(e) {
+    console.log("sending AJAX")
     e.preventDefault(); // avoid executing the actual submit of the form.
 
     var url = "https://api.kraigh.net/apiKey"; // the script where you handle the form input.
