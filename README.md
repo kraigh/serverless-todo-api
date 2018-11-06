@@ -5,13 +5,15 @@
 
 ![Serverless Todo Service Architecture](images/sls_todo_architecture.png "Serverless Todo Service Architecture")
 
+# Running Locally
+
 ## Pre-requisites
 * Install Node.js : [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
 * Install Serverless Framework: `npm install -g serverless`
 
 ## Get the Serverless Todo Service project
-* Clone Github project : [https://github.com/msanand/serverless-todo-api](https://github.com/msanand/serverless-todo-api)
-* Alternatively, you can install the service locally from Github using the serverless command: `serverless install --url https://github.com/msanand/serverless-todo-api`
+* Clone Github project : [https://github.com/kraigh/serverless-todo-api](https://github.com/kraigh/serverless-todo-api)
+* Alternatively, you can install the service locally from Github using the serverless command: `serverless install --url https://github.com/kraigh/serverless-todo-api`
 * Install module dependencies: `npm install`
 
 ## Set-up AWS credentials
