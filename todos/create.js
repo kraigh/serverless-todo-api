@@ -21,17 +21,17 @@ module.exports.create = (event, context, callback) => {
     };
 
     const todoItem = JSON.parse(event.body);
-    
+
     if (event.headers["x-api-key"] === undefined) {
-        callback(null, { statusCode: 400, body: JSON.stringify("Missing or invalid x-api-key header.") });
+        return callback(null, { statusCode: 400, body: JSON.stringify("Missing or invalid x-api-key header.") });
     } else if (event.headers["x-api-key"].length < 1) {
-        callback(null, { statusCode: 400, body: JSON.stringify("Empty x-api-key header value.") });
+        return callback(null, { statusCode: 400, body: JSON.stringify("Empty x-api-key header value.") });
     } else if (todoItem.text === undefined) {
-        callback(null, { statusCode: 400, body: JSON.stringify("Missing or malformed 'text' property in JSON object in request body.") });
+        return callback(null, { statusCode: 400, body: JSON.stringify("Missing or malformed 'text' property in JSON object in request body.") });
     } else if (todoItem.text.length < 1) {
-        callback(null, { statusCode: 400, body: JSON.stringify("Empty 'text' property in JSON object in request body.") });
+        return callback(null, { statusCode: 400, body: JSON.stringify("Empty 'text' property in JSON object in request body.") });
     }
-    
+
     const timestamp = Math.floor(new Date() / 1000);
     const params = {
         TableName: process.env.TODOS_TABLE,

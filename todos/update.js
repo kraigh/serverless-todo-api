@@ -23,11 +23,11 @@ module.exports.update = (event, context, callback) => {
     const todoItem = JSON.parse(event.body);
 
     if (event.headers["x-api-key"] === undefined) {
-        callback(null, { headers: headers, statusCode: 400, body: JSON.stringify("Missing or invalid x-api-key header.")});
+        return callback(null, { headers: headers, statusCode: 400, body: JSON.stringify("Missing or invalid x-api-key header.")});
     } else if (event.headers["x-api-key"].length < 1) {
-        callback(null, { headers: headers, statusCode: 400, body: JSON.stringify("Empty x-api-key header value.")});
+        return callback(null, { headers: headers, statusCode: 400, body: JSON.stringify("Empty x-api-key header value.")});
     } else if (event.pathParameters.id === undefined) {
-        callback(null, { headers: headers, statusCode: 400, body: JSON.stringify("Missing 'id' in URL path.")});
+        return callback(null, { headers: headers, statusCode: 400, body: JSON.stringify("Missing 'id' in URL path.")});
     }
 
     const updateNames = {};
@@ -44,7 +44,7 @@ module.exports.update = (event, context, callback) => {
         updateArray.push("#t = :t");
     }
     if (updateArray.length == 0) {
-        callback(null, { statusCode: 400, body: "No properties passed to update. Supports 'completed' and 'text'.", headers: { "Content-Type": "text/plain" } });
+        return callback(null, { statusCode: 400, body: "No properties passed to update. Supports 'completed' and 'text'.", headers: { "Content-Type": "text/plain" } });
     }
     const timestamp = Math.floor(new Date() / 1000);
     updateNames["#u"] = "updated";

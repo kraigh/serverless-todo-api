@@ -21,11 +21,11 @@ module.exports.delete = (event, context, callback) => {
     };
 
     if (event.headers["x-api-key"] === undefined) {
-        callback(null, { headers: headers, statusCode: 400, body: JSON.stringify("Missing or invalid x-api-key header.")});
+        return callback(null, { headers: headers, statusCode: 400, body: JSON.stringify("Missing or invalid x-api-key header.")});
     } else if (event.headers["x-api-key"].length < 1) {
-        callback(null, { headers: headers, statusCode: 400, body: JSON.stringify("Empty x-api-key header value.")});
+        return callback(null, { headers: headers, statusCode: 400, body: JSON.stringify("Empty x-api-key header value.")});
     } else if (event.pathParameters.id === undefined) {
-        callback(null, { headers: headers, statusCode: 400, body: JSON.stringify("Missing 'id' in URL path.")});
+        return callback(null, { headers: headers, statusCode: 400, body: JSON.stringify("Missing 'id' in URL path.")});
     }
 
     const params = {
