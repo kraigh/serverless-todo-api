@@ -24,9 +24,9 @@ module.exports.create = (event, context, callback) => {
     const userInfo = JSON.parse(event.body);
 
     if (userInfo.email === undefined) {
-        callback(null, { headers: headers, statusCode: 400, body: JSON.stringify("Missing or malformed 'email' property in JSON object in request body.") });
+        return callback(null, { headers: headers, statusCode: 400, body: JSON.stringify("Missing or malformed 'email' property in JSON object in request body.") });
     } else if (userInfo.name === undefined) {
-        callback(null, { headers: headers, statusCode: 400, body: JSON.stringify("Missing or malformed 'name' property in JSON object in request body.") });
+        return callback(null, { headers: headers, statusCode: 400, body: JSON.stringify("Missing or malformed 'name' property in JSON object in request body.") });
     }
 
     var timestamp = moment().valueOf();
