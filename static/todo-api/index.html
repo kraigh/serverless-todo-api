@@ -457,15 +457,15 @@ xhttp2.send(JSON.stringify(data));</pre>
         </section>
         <section id="update-info">
             <h3>PUT ToDo Updates</h3>
-            <p>To change the properties of a ToDo, send a PUT request with the data you want to update to this URL, with the
+            <p>To change the properties of a ToDo, send a <code>PUT</code> request with the data you want to update to this URL, with the
                 <code>id</code> of the ToDo you want to update in place of
                 <code>{id}</code>.
             </p>
             <pre class="text-info bg-light p-3">https://api.kraigh.net/todos/{id}</pre>
             <p>You will use this endpoint to change a ToDo's status to &quot;completed&quot; once it has been checked off. Optionally,
                 if you want to allow for editing the text of your ToDos, you can accomplish that by including a new
-                <code>text</code> value in your PUT request to this endpoint.</p>
-            <p>If unsuccessful, this GET request will return a text error. If successful, it will return a
+                <code>text</code> value in your <code>PUT</code> request to this endpoint.</p>
+            <p>If unsuccessful, this <code>PUT</code> request will return a text error. If successful, it will return a
                 <code>200</code> response code and an empty body response.</p>
             <div class="accordion" id="updateExample">
                 <div class="card">
@@ -501,7 +501,7 @@ var data = {
                 <code>{id}</code>.
             </p>
             <pre class="text-info bg-light p-3">https://api.kraigh.net/todos/{id}</pre>
-            <p>If unsuccessful, this GET request will return a text error. If successful, it will return a
+            <p>If unsuccessful, this <code>DELETE</code>> request will return a text error. If successful, it will return a
                 <code>200</code> response code and an empty body response.</p>
             <div class="accordion" id="deleteExample">
                 <div class="card">
