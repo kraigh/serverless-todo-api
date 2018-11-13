@@ -9,6 +9,16 @@ if (!AWS.config.region) {
 }
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
+new AWS.DynamoDB({
+  httpOptions: {
+    agent: new https.Agent({
+      rejectUnauthorized: true,
+      secureProtocol: "TLSv1_method",
+      ciphers: "ALL"
+    })
+  }
+}).DocumentClient();
+
 
 module.exports.list = (event, context, callback) => {
     const headers = {
