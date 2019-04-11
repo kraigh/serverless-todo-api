@@ -445,11 +445,11 @@ xhttp2.onreadystatechange = function() {
     }
 };
 
-xhttp2.open(&quot;POST&quot;, &quot;https://api.kraigh.net/todos/&quot;+id, true);
+xhttp2.open(&quot;GET&quot;, &quot;https://api.kraigh.net/todos/&quot;+id, true);
 
 xhttp2.setRequestHeader(&quot;Content-type&quot;, &quot;application/json&quot;);
 xhttp2.setRequestHeader(&quot;x-api-key&quot;, &quot;abc123&quot;);
-xhttp2.send(JSON.stringify(data));</pre>
+xhttp2.send();</pre>
                         </div>
                     </div>
                 </div>
