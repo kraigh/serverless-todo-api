@@ -53,7 +53,7 @@ custom:
 # Configure AWS as provider
 provider:
   name: aws
-  runtime: nodejs6.10
+  runtime: nodejs8.10
   # Name of dynamo db table used to store ToDos
   environment: 
     TODOS_TABLE: ${self:service}-todo-store
